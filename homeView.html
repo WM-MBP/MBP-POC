@@ -1,0 +1,43 @@
+<html ng-app = "financialSettingApp">
+<head>
+    <title>Financial Setting</title>
+    <script src = "https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
+    <script src = "homeController.js"></script>
+</head>
+<body>
+  <div ng-controller = "financialSettingController">
+        Group : 
+        <select id="group" ng-model="group" ng-options = "group.ID +' - ' + group.value for group in groups">
+          <option value=""></option>
+        </select><br>
+
+        <br>
+        Market Area :
+       <select id="marketArea" ng-model="marketArea" ng-options = "marketArea.ma_id +' - ' + marketArea.ma_name for marketArea in marketAreas">
+        <option value=""></option>
+       </select><br>
+
+       <br>
+       Facility :
+       <select id="facility" ng-model="facility" ng-options = "facility.facility_type_id as facility.facility_type for facility in facilities"> 
+       </select>  <br> 
+
+       <br>
+       BusinessUnit :
+       <select id="businessUnit" ng-model="businessUnit" ng-options = "businessUnit.bu_id +' - ' + businessUnit.bu_name for businessUnit in businessUnits"> 
+        <option value=""></option>
+      </select>  <br>
+
+       <br>
+       LOB :
+       <select id="lob" ng-model="lob" ng-options = "lob.lob4_id +' - ' +lob.lob4_name for lob in LOBs" ng-if = "collectionSelected"> 
+        <option value=""></option>
+       </select>  
+
+    </div>
+
+    <br>
+</body>
+</html>
+ 
+
